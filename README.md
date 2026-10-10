@@ -140,7 +140,7 @@ The response includes the image dimensions, selected engine, inference latency, 
 
 ### `WS /ws`
 
-Send binary JPEG frames to receive JSON results with `type: "result"`. Text messages control the session:
+Send binary JPEG frames to receive JSON results with `type: "result"`. Frames above the configured rate are skipped with a `{ "type": "rate_limited" }` response; the connection stays open and the client can continue streaming. Text messages control the session:
 
 ```json
 {"engine":"deepface"}
@@ -150,7 +150,7 @@ Send binary JPEG frames to receive JSON results with `type: "result"`. Text mess
 {"reset":true}
 ```
 
-Changing engines resets the face tracker. Malformed image frames are ignored. If the client exceeds the configured frame rate, the server sends an error and closes the connection with code `1013`.
+Changing engines resets the face tracker. Malformed image frames are ignored. If the client exceeds the configured frame rate, the server skips excess frames and keeps the connection open.
 
 ## Configuration
 

@@ -169,9 +169,10 @@ async def ws_stream(ws: WebSocket):
                 client_key(ws.client), WS_FRAME_RATE_LIMIT, WS_FRAME_RATE_WINDOW
             )
             if retry_after:
-                await ws.send_json({"type": "error", "message": "frame rate limit exceeded"})
-                await ws.close(code=1013, reason="frame rate limit exceeded")
-                break
+                # Drop this frame but keep the camera session alive. Clients
+                # can resume as soon as a slot opens in the sliding window.
+                await ws.send_json({"type": "rate_limited"})
+                continue
             try:
                 frame = decode_image(data)
             except ValueError:

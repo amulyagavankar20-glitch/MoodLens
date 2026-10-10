@@ -33,8 +33,10 @@ const state = {
 
 const SEND_W = 480;       // downscale before sending, keeps latency low
 const JPEG_Q = 0.7;
+const SEND_INTERVAL_MS = 125; // stay below the backend's 10 fps frame limit
 const HISTORY_MAX = 120;
 const grab = document.createElement("canvas");
+let lastFrameAt = 0;
 
 // ---------- ui scaffolding ----------
 
@@ -216,6 +218,10 @@ function connect() {
     ws.onmessage = (e) => {
       const msg = JSON.parse(e.data);
       if (msg.type === "result") { state.inflight = false; handleResult(msg); }
+      else if (msg.type === "rate_limited") {
+        state.inflight = false;
+        showNote("Frame skipped: this connection is sending faster than the server limit.", true);
+      }
       else if (msg.type === "error") { showNote(msg.message, true); revertEngine(); }
       else if (msg.type === "engine") showNote(engineNote(msg.engine));
     };
@@ -226,12 +232,21 @@ function connect() {
 function sendFrame() {
   if (!state.running) return;
   const v = el.video;
-  if (!state.inflight && v.videoWidth && state.ws?.readyState === 1) {
+  const now = performance.now();
+  if (!state.inflight && now - lastFrameAt >= SEND_INTERVAL_MS && v.videoWidth && state.ws?.readyState === 1) {
     const s = SEND_W / v.videoWidth;
     grab.width = SEND_W; grab.height = Math.round(v.videoHeight * s);
     grab.getContext("2d").drawImage(v, 0, 0, grab.width, grab.height);
     state.inflight = true;
-    grab.toBlob((b) => b && state.ws?.readyState === 1 && b.arrayBuffer().then((buf) => state.ws.send(buf)), "image/jpeg", JPEG_Q);
+    lastFrameAt = now;
+    grab.toBlob(async (b) => {
+      if (!b || state.ws?.readyState !== 1) { state.inflight = false; return; }
+      try {
+        state.ws.send(await b.arrayBuffer());
+      } catch {
+        state.inflight = false;
+      }
+    }, "image/jpeg", JPEG_Q);
   }
   requestAnimationFrame(sendFrame);
 }
@@ -250,7 +265,7 @@ async function startCamera() {
   try { await connect(); } catch { showNote("can't reach the backend websocket", true); stopCamera(); return; }
   el.placeholder.classList.add("hidden");
   el.overlay.dataset.mirror = "1";
-  state.running = true; state.inflight = false;
+  state.running = true; state.inflight = false; lastFrameAt = 0;
   state.startedAt = state.startedAt || Date.now();
   el.stop.disabled = false; el.snap.disabled = false;
   requestAnimationFrame(sendFrame);

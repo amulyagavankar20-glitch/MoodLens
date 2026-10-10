@@ -44,7 +44,7 @@ class HaarEngine:
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         gray = cv2.equalizeHist(gray)
         faces = self.face.detectMultiScale(
-            gray, scaleFactor=1.2, minNeighbors=5, minSize=(60, 60)
+            gray, scaleFactor=1.1, minNeighbors=4, minSize=(40, 40)
         )
         out: List[RawFace] = []
         for (x, y, w, h) in faces:
