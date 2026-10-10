@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MoodLens ✨ live face moods</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+
+  <header class="top">
+    <div class="logo">
+      <span class="logo-dot"></span>
+      <h1>mood<span>lens</span></h1>
+      <em>vibes, but measured</em>
+    </div>
+    <div class="status">
+      <span id="conn" class="pill off">offline</span>
+      <span id="fps" class="pill">0 fps</span>
+      <span id="lat" class="pill">– ms</span>
+    </div>
+  </header>
+
+  <main class="grid">
+    <!-- camera -->
+    <section class="card cam-card">
+      <div class="tabs">
+        <button class="tab active" data-tab="live">📹 live cam</button>
+        <button class="tab" data-tab="upload">🖼️ upload</button>
+      </div>
+
+      <div id="tab-live" class="stage">
+        <video id="video" playsinline muted></video>
+        <canvas id="overlay"></canvas>
+        <div id="placeholder" class="placeholder">
+          <div class="big">🫥</div>
+          <p>camera is off. hit start and show me your face.</p>
+        </div>
+        <div id="flash" class="flash"></div>
+      </div>
+
+      <div id="tab-upload" class="stage hidden">
+        <label class="drop" id="drop">
+          <input type="file" id="file" accept="image/*" hidden />
+          <div class="big">⬆️</div>
+          <p>drop an image or click to pick one</p>
+        </label>
+        <div class="upload-view hidden" id="upload-view">
+          <div class="pos">
+            <img id="upload-img" alt="" />
+            <canvas id="upload-overlay"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="btn-start" class="btn primary">▶ start camera</button>
+        <button id="btn-stop" class="btn" disabled>■ stop</button>
+        <button id="btn-snap" class="btn" disabled>📸 snap</button>
+        <div class="spacer"></div>
+        <label class="select">
+          engine
+          <select id="engine">
+            <option value="haar">haar (smile / neutral)</option>
+            <option value="deepface">deepface (7 moods)</option>
+          </select>
+        </label>
+      </div>
+      <p id="engine-note" class="note"></p>
+    </section>
+
+    <!-- readout -->
+    <aside class="side">
+      <section class="card mood-card" id="mood-card">
+        <div class="mood-emoji" id="mood-emoji">🫥</div>
+        <div class="mood-name" id="mood-name">no face yet</div>
+        <div class="mood-conf" id="mood-conf">waiting…</div>
+        <div class="faces-count" id="faces-count">0 faces</div>
+      </section>
+
+      <section class="card">
+        <h2>mood meter</h2>
+        <div id="bars" class="bars"></div>
+      </section>
+
+      <section class="card">
+        <div class="row-head">
+          <h2>timeline</h2>
+          <button id="btn-clear" class="mini">clear</button>
+        </div>
+        <canvas id="timeline" width="400" height="120"></canvas>
+        <div id="legend" class="legend"></div>
+      </section>
+
+      <section class="card">
+        <h2>session</h2>
+        <div id="stats" class="stats"></div>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="foot">
+    frames stay on your machine + this server. nothing is stored. · <a href="/docs" target="_blank">api docs</a>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+services:
+  moodlens:
+    build:
+      context: .
+      args:
+        DEEPFACE: "0"   # set to "1" for the 7-mood engine (big image)
+    ports:
+      - "8000:8000"
+    environment:
+      MOODLENS_ENGINE: haar   # or deepface
+    restart: unless-stopped
