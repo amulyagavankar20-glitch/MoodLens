@@ -1,0 +1,529 @@
+{
+  "engine": "deepface",
+  "analysis": "DeepFace emotion model, one contact-sheet panel at a time",
+  "width": 740,
+  "height": 591,
+  "latency_ms": 1278.0,
+  "faces": [
+    {
+      "id": 1,
+      "box": [
+        25,
+        17,
+        90,
+        90
+      ],
+      "mood": "surprise",
+      "emoji": "\ud83d\ude32",
+      "confidence": 0.973,
+      "scores": {
+        "happy": 0.0,
+        "sad": 0.0,
+        "angry": 0.0,
+        "surprise": 0.9726,
+        "fear": 0.0274,
+        "disgust": 0.0,
+        "neutral": 0.0
+      },
+      "panel": {
+        "row": 1,
+        "column": 1
+      },
+      "localization": "opencv face localization"
+    },
+    {
+      "id": 2,
+      "box": [
+        180,
+        17,
+        85,
+        85
+      ],
+      "mood": "happy",
+      "emoji": "\ud83d\ude04",
+      "confidence": 1.0,
+      "scores": {
+        "happy": 1.0,
+        "sad": 0.0,
+        "angry": 0.0,
+        "surprise": 0.0,
+        "fear": 0.0,
+        "disgust": 0.0,
+        "neutral": 0.0
+      },
+      "panel": {
+        "row": 1,
+        "column": 2
+      },
+      "localization": "opencv face localization"
+    },
+    {
+      "id": 3,
+      "box": [
+        322,
+        30,
+        77,
+        77
+      ],
+      "mood": "angry",
+      "emoji": "\ud83d\ude20",
+      "confidence": 1.0,
+      "scores": {
+        "happy": 0.0,
+        "sad": 0.0,
+        "angry": 1.0,
+        "surprise": 0.0,
+        "fear": 0.0,
+        "disgust": 0.0,
+        "neutral": 0.0
+      },
+      "panel": {
+        "row": 1,
+        "column": 3
+      },
+      "localization": "opencv face localization"
+    },
+    {
+      "id": 4,
+      "box": [
+        480,
+        8,
+        78,
+        92
+      ],
+      "mood": "fear",
+      "emoji": "\ud83d\ude28",
+      "confidence": 0.876,
+      "scores": {
+        "happy": 0.029,
+        "sad": 0.0009,
+        "angry": 0.0865,
+        "surprise": 0.0,
+        "fear": 0.8762,
+        "disgust": 0.0,
+        "neutral": 0.0074
+      },
+      "panel": {
+        "row": 1,
+        "column": 4
+      },
+      "localization": "panel-centered crop"
+    },
+    {
+      "id": 5,
+      "box": [
+        620,
+        18,
+        58,
+        58
+      ],
+      "mood": "angry",
+      "emoji": "\ud83d\ude20",
+      "confidence": 0.865,
+      "scores": {
+        "happy": 0.0003,
+        "sad": 0.0,
+        "angry": 0.865,
+        "surprise": 0.0,
+        "fear": 0.1346,
+        "disgust": 0.0,
+        "neutral": 0.0
+      },
+      "panel": {
+        "row": 1,
+        "column": 5
+      },
+      "localization": "opencv face localization"
+    },
+    {
+      "id": 6,
+      "box": [
+        42,
+        161,
+        58,
+        58
+      ],
+      "mood": "happy",
+      "emoji": "\ud83d\ude04",
+      "confidence": 1.0,
+      "scores": {
+        "happy": 0.9999,
+        "sad": 0.0,
+        "angry": 0.0,
+        "surprise": 0.0,
+        "fear": 0.0,
+        "disgust": 0.0,
+        "neutral": 0.0001
+      },
+      "panel": {
+        "row": 2,
+        "column": 1
+      },
+      "localization": "opencv face localization"
+    },
+    {
+      "id": 7,
+      "box": [
+        187,
+        169,
+        70,
+        70
+      ],
+      "mood": "angry",
+      "emoji": "\ud83d\ude20",
+      "confidence": 0.974,
+      "scores": {
+        "happy": 0.0086,
+        "sad": 0.0,
+        "angry": 0.9739,
+        "surprise": 0.0006,
+        "fear": 0.0169,
+        "disgust": 0.0001,
+        "neutral": 0.0
+      },
+      "panel": {
+        "row": 2,
+        "column": 2
+      },
+      "localization": "opencv face localization"
+    },
+    {
+      "id": 8,
+      "box": [
+        321,
+        179,
+        97,
+        97
+      ],
+      "mood": "angry",
+      "emoji": "\ud83d\ude20",
+      "confidence": 1.0,
+      "scores": {
+        "happy": 0.0,
+        "sad": 0.0002,
+        "angry": 0.9998,
+        "surprise": 0.0,
+        "fear": 0.0,
+        "disgust": 0.0,
+        "neutral": 0.0
+      },
+      "panel": {
+        "row": 2,
+        "column": 3
+      },
+      "localization": "opencv face localization"
+    },
+    {
+      "id": 9,
+      "box": [
+        480,
+        157,
+        78,
+        92
+      ],
+      "mood": "happy",
+      "emoji": "\ud83d\ude04",
+      "confidence": 0.486,
+      "scores": {
+        "happy": 0.4859,
+        "sad": 0.1436,
+        "angry": 0.0122,
+        "surprise": 0.0513,
+        "fear": 0.0266,
+        "disgust": 0.0,
+        "neutral": 0.2804
+      },
+      "panel": {
+        "row": 2,
+        "column": 4
+      },
+      "localization": "panel-centered crop"
+    },
+    {
+      "id": 10,
+      "box": [
+        622,
+        180,
+        78,
+        78
+      ],
+      "mood": "angry",
+      "emoji": "\ud83d\ude20",
+      "confidence": 0.62,
+      "scores": {
+        "happy": 0.0,
+        "sad": 0.0007,
+        "angry": 0.6201,
+        "surprise": 0.0,
+        "fear": 0.0,
+        "disgust": 0.0,
+        "neutral": 0.3791
+      },
+      "panel": {
+        "row": 2,
+        "column": 5
+      },
+      "localization": "opencv face localization"
+    },
+    {
+      "id": 11,
+      "box": [
+        28,
+        312,
+        90,
+        90
+      ],
+      "mood": "happy",
+      "emoji": "\ud83d\ude04",
+      "confidence": 1.0,
+      "scores": {
+        "happy": 1.0,
+        "sad": 0.0,
+        "angry": 0.0,
+        "surprise": 0.0,
+        "fear": 0.0,
+        "disgust": 0.0,
+        "neutral": 0.0
+      },
+      "panel": {
+        "row": 3,
+        "column": 1
+      },
+      "localization": "opencv face localization"
+    },
+    {
+      "id": 12,
+      "box": [
+        182,
+        307,
+        78,
+        92
+      ],
+      "mood": "angry",
+      "emoji": "\ud83d\ude20",
+      "confidence": 0.999,
+      "scores": {
+        "happy": 0.0,
+        "sad": 0.0,
+        "angry": 0.9991,
+        "surprise": 0.0009,
+        "fear": 0.0,
+        "disgust": 0.0,
+        "neutral": 0.0
+      },
+      "panel": {
+        "row": 3,
+        "column": 2
+      },
+      "localization": "panel-centered crop"
+    },
+    {
+      "id": 13,
+      "box": [
+        345,
+        320,
+        59,
+        59
+      ],
+      "mood": "happy",
+      "emoji": "\ud83d\ude04",
+      "confidence": 1.0,
+      "scores": {
+        "happy": 1.0,
+        "sad": 0.0,
+        "angry": 0.0,
+        "surprise": 0.0,
+        "fear": 0.0,
+        "disgust": 0.0,
+        "neutral": 0.0
+      },
+      "panel": {
+        "row": 3,
+        "column": 3
+      },
+      "localization": "opencv face localization"
+    },
+    {
+      "id": 14,
+      "box": [
+        479,
+        315,
+        86,
+        86
+      ],
+      "mood": "neutral",
+      "emoji": "\ud83d\ude10",
+      "confidence": 0.91,
+      "scores": {
+        "happy": 0.0877,
+        "sad": 0.0,
+        "angry": 0.002,
+        "surprise": 0.0,
+        "fear": 0.0,
+        "disgust": 0.0,
+        "neutral": 0.9103
+      },
+      "panel": {
+        "row": 3,
+        "column": 4
+      },
+      "localization": "opencv face localization"
+    },
+    {
+      "id": 15,
+      "box": [
+        639,
+        311,
+        59,
+        59
+      ],
+      "mood": "sad",
+      "emoji": "\ud83d\ude22",
+      "confidence": 0.466,
+      "scores": {
+        "happy": 0.0019,
+        "sad": 0.4658,
+        "angry": 0.1021,
+        "surprise": 0.0,
+        "fear": 0.1558,
+        "disgust": 0.0,
+        "neutral": 0.2743
+      },
+      "panel": {
+        "row": 3,
+        "column": 5
+      },
+      "localization": "opencv face localization"
+    },
+    {
+      "id": 16,
+      "box": [
+        43,
+        453,
+        58,
+        58
+      ],
+      "mood": "angry",
+      "emoji": "\ud83d\ude20",
+      "confidence": 0.714,
+      "scores": {
+        "happy": 0.0911,
+        "sad": 0.1356,
+        "angry": 0.7136,
+        "surprise": 0.0,
+        "fear": 0.0106,
+        "disgust": 0.0,
+        "neutral": 0.0492
+      },
+      "panel": {
+        "row": 4,
+        "column": 1
+      },
+      "localization": "opencv face localization"
+    },
+    {
+      "id": 17,
+      "box": [
+        167,
+        462,
+        87,
+        87
+      ],
+      "mood": "neutral",
+      "emoji": "\ud83d\ude10",
+      "confidence": 0.843,
+      "scores": {
+        "happy": 0.0303,
+        "sad": 0.0,
+        "angry": 0.1265,
+        "surprise": 0.0,
+        "fear": 0.0,
+        "disgust": 0.0,
+        "neutral": 0.8431
+      },
+      "panel": {
+        "row": 4,
+        "column": 2
+      },
+      "localization": "opencv face localization"
+    },
+    {
+      "id": 18,
+      "box": [
+        332,
+        466,
+        75,
+        75
+      ],
+      "mood": "angry",
+      "emoji": "\ud83d\ude20",
+      "confidence": 1.0,
+      "scores": {
+        "happy": 0.0,
+        "sad": 0.0,
+        "angry": 1.0,
+        "surprise": 0.0,
+        "fear": 0.0,
+        "disgust": 0.0,
+        "neutral": 0.0
+      },
+      "panel": {
+        "row": 4,
+        "column": 3
+      },
+      "localization": "opencv face localization"
+    },
+    {
+      "id": 19,
+      "box": [
+        465,
+        470,
+        69,
+        69
+      ],
+      "mood": "angry",
+      "emoji": "\ud83d\ude20",
+      "confidence": 0.568,
+      "scores": {
+        "happy": 0.0001,
+        "sad": 0.0529,
+        "angry": 0.5682,
+        "surprise": 0.0,
+        "fear": 0.0438,
+        "disgust": 0.0,
+        "neutral": 0.335
+      },
+      "panel": {
+        "row": 4,
+        "column": 4
+      },
+      "localization": "opencv face localization"
+    },
+    {
+      "id": 20,
+      "box": [
+        638,
+        459,
+        68,
+        68
+      ],
+      "mood": "happy",
+      "emoji": "\ud83d\ude04",
+      "confidence": 0.901,
+      "scores": {
+        "happy": 0.9006,
+        "sad": 0.0044,
+        "angry": 0.0034,
+        "surprise": 0.0,
+        "fear": 0.0023,
+        "disgust": 0.0,
+        "neutral": 0.0892
+      },
+      "panel": {
+        "row": 4,
+        "column": 5
+      },
+      "localization": "opencv face localization"
+    }
+  ]
+}
